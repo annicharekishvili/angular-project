@@ -1,0 +1,21 @@
+<p
+  [className]="title"
+  [ngClass]="{ small: fontSize < 10, big: fontSize >= 10 }"
+>
+  {{ title }}
+</p>
+<!-- <p [className]="'title'">{{ title }}</p>
+<p className="{{ title }}">{{ title }}</p> -->
+
+<!-- two way binding -->
+<!-- <ngg-sub-header
+  [(title)]="title"
+  [fontSize]="fontSize"
+  [color]="color"
+></ngg-sub-header> -->
+<ngg-sub-header
+  [title]="title"
+  [fontSize]="fontSize"
+  [color]="color"
+  (titleUpdated)="updateTitle($event)"
+></ngg-sub-header>

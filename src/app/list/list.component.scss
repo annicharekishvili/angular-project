@@ -1,0 +1,42 @@
+.persons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+
+  .item {
+    width: 20%;
+  }
+
+  .btn {
+    display: flex;
+    gap: 5px;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.danger {
+  background-color: #dc3545;
+}
+
+input {
+  margin-bottom: 15px;
+  padding: 8px;
+  width: 30%;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+p.danger {
+  color: red;
+  font-size: 14px;
+}

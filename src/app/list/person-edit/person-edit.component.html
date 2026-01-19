@@ -1,0 +1,36 @@
+<h1>Edit person</h1>
+
+<form [formGroup]="form">
+  <div class="item">
+    <p>name</p>
+    <input type="text" formControlName="name" />
+  </div>
+  <div class="item">
+    <p>lastname</p>
+    <input type="text" formControlName="lastname" />
+  </div>
+  <div class="item">
+    <p>age</p>
+    <input
+      [ngStyle]="{
+        border:
+          form.get('age')?.touched && form.get('age')?.invalid
+            ? '2px solid red'
+            : '1px solid #ccc'
+      }"
+      type="text"
+      formControlName="age"
+    />
+  </div>
+
+  <h1>Address</h1>
+
+  <ngg-edit-address [addressForm]="addressForm"></ngg-edit-address>
+
+  <div class="actions">
+    <button class="save" (click)="saveChanges()" [disabled]="form.invalid">
+      edit
+    </button>
+    <button class="danger" (click)="cancelChanges()">cancel</button>
+  </div>
+</form>

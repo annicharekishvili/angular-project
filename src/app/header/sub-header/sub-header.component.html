@@ -1,0 +1,13 @@
+<p
+  [style.font-size]="color === 'red' ? fontSize + 'px' : fontSize + 5 + 'px'"
+  [ngStyle]="{ color: fontSize > 20 ? 'green' : 'yellow' }"
+>
+  {{ _title }}
+</p>
+
+<button (click)="updateTitle('Lec 2')">update to lec 2</button>
+<button (click)="updateTitle('Angular Lec 2')">update to angular lec 2</button>
+
+<h1 class="small">{{ counter }} times</h1>
+
+<!-- <h1>{{ subheader.color!.baseColor }} +++</h1> -->

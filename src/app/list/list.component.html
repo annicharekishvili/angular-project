@@ -1,0 +1,40 @@
+<h1>Persons list</h1>
+
+<input
+  type="text"
+  placeholder="search person..."
+  [formControl]="searchControl"
+/>
+
+<!-- <p>{{ searchControl.errors | json }}</p>
+<p>{{ searchControl.valid }}</p> -->
+
+<!-- <ng-container *ngIf="searchControl.errors">
+  <p class="danger" *ngIf="searchControl.errors['required']">
+    input is required
+  </p>
+  <p class="danger" *ngIf="searchControl.errors['minlength']">
+    value length should be at least
+    {{ searchControl.errors['minlength'].requiredLength }} characters
+  </p>
+</ng-container> -->
+
+<div *ngFor="let person of persons" class="persons">
+  <div class="item">
+    <p>
+      {{ person.name }} {{ person.lastname }}, age: {{ person.age }}, from
+      {{ person.address?.country }} {{ person.address?.city }}
+    </p>
+  </div>
+  <div class="btn">
+    <button class="danger" (click)="deletePerson(person.id)">delete</button>
+    <button type="submit" (click)="editPerson(person.id)">edit</button>
+  </div>
+</div>
+
+@if(currentPerson) {
+<ngg-person-edit
+  [person]="currentPerson"
+  (save)="saveChanges($event)"
+></ngg-person-edit>
+}

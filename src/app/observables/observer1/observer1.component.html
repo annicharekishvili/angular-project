@@ -1,0 +1,23 @@
+<p>observer1 works!</p>
+
+<h1>{{ observable | async }}</h1>
+<ng-container *ngIf="timer | async as seconds">
+  <p>Seconds elapsed: {{ seconds }}</p>
+</ng-container>
+
+<button (click)="addInput()">+</button>
+
+<form [formGroup]="form">
+  <ng-container formArrayName="firstNames">
+    <div class="list" *ngFor="let firstName of getFirstNames(); let i = index">
+      <div class="list_item">
+        <input type="text" [formControlName]="i" />
+        <button class="btn" (click)="deleteInput(i)">delete</button>
+      </div>
+    </div>
+  </ng-container>
+</form>
+
+<button [disabled]="!form.valid" class="btn" (click)="sendNames()">
+  send names
+</button>

@@ -1,0 +1,32 @@
+button {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+
+  input {
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+.btn {
+  padding: 10px;
+}
